@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--BeforeSuite-->
+<suite name="acttime suite" guice-stage="DEVELOPMENT" parallel="tests" thread-count="2" preserve-order="true">
+	<!--@BeforeTest-->
+	<test thread-count="2" name="chrome browser test" verbose="2">
+		<parameter name="browsername" value="chrome" />
+		<parameter name="url" value="https://demo.actitime.com/login.do" />
+		<parameter name="uname" value="admin" />
+		<parameter name="pwd" value="manager" />
+		<classes>
+			<!--@BeforeClass-->
+			<class name="com.atlas.maven_actitime.testrunner.ActiTimeRunner">
+				<methods>
+					<!--@BeforeMethod-->
+					<include name="verifyAddingACustomer" />
+					<!--@AfterMethod-->
+				</methods>
+			</class> <!-- com.atlas.maven_actitime.testrunner.ActiTimeRunner -->
+			<!--@AfterClass-->
+		</classes>
+	</test> <!-- Default test -->
+	<!--@AfterTest-->
+
+	<!--@BeforeTest-->
+	<test thread-count="5" name="home browsers" verbose="2">
+		<parameter name="browsername" value="chrome" />
+		<parameter name="url" value="https://demo.actitime.com/login.do" />
+		<parameter name="uname" value="admin" />
+		<parameter name="pwd" value="manager" />
+		<classes>
+			<!--@BeforeClass-->
+			<class name="com.atlas.maven_actitime.testrunner.ActiTimeRunner">
+				<methods>
+					<!--@BeforeMethod-->
+					<include name="verifyHomePageTitle" />
+					<!--@AfterMethod-->
+				</methods>
+			</class> <!-- com.atlas.maven_actitime.testrunner.ActiTimeRunner -->
+			<!--@AfterClass-->
+		</classes>
+	</test> <!-- Default test -->
+	<!--@AfterTest-->
+
+	<!--@BeforeTest-->
+	<test thread-count="5" name="delete browsers" verbose="2">
+		<parameter name="browsername" value="chrome" />
+		<parameter name="url" value="https://demo.actitime.com/login.do" />
+		<parameter name="uname" value="admin" />
+		<parameter name="pwd" value="manager" />
+		<classes>
+			<!--@BeforeClass-->
+			<class name="com.atlas.maven_actitime.testrunner.ActiTimeRunner">
+				<methods>
+					<!--@BeforeMethod-->
+					<include name="verifyDeleteCustomer" />
+					<!--@AfterMethod-->
+				</methods>
+			</class> <!-- com.atlas.maven_actitime.testrunner.ActiTimeRunner -->
+			<!--@AfterClass-->
+		</classes>
+	</test> <!-- Default test -->
+	<!--@AfterTest-->
+
+
+</suite> <!-- Default suite -->
+<!--AfterSuite-->
+            

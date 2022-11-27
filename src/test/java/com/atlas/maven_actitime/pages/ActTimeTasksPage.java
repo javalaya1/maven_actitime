@@ -12,11 +12,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ActTimeTasks {
+public class ActTimeTasksPage extends BasePage {
 	private WebDriver driver; // this.driver;
-
-	public ActTimeTasks(WebDriver driver) {
-		this.driver = driver;
+	public ActTimeTasksPage(WebDriver driver) {
+		super(driver);
 		PageFactory.initElements(this.driver, this);// with this line @FindBy will work
 	}
 
